@@ -1,0 +1,38 @@
+# Unreal Engine build/generated folders
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Visual Studio / Rider / IDE
+.vs/
+*.VC.db
+*.VC.opendb
+*.sln
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Generated project files
+*.xcodeproj
+*.xcworkspace
+*.opensdf
+*.sdf
+
+# Engine/user temp
+*.tmp
+*.temp
+*.log
+*.pdb
+*.obj
+*.ipch
+
+# Unreal autosave/backup artifacts
+*_BuiltData.uasset
+
+# Plugin-generated build output
+Plugins/*/Binaries/
+Plugins/*/Intermediate/
+Plugins/*/Saved/
+
