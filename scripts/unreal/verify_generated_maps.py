@@ -22,9 +22,19 @@ for map_path in MAPS:
         continue
 
     actors = unreal.EditorLevelLibrary.get_all_level_actors()
+
     player_starts = count_by_class(actors, unreal.PlayerStart)
     static_meshes = count_by_class(actors, unreal.StaticMeshActor)
     text_actors = count_by_class(actors, unreal.TextRenderActor)
+
+    point_lights = count_by_class(actors, unreal.PointLight)
+    spot_lights = count_by_class(actors, unreal.SpotLight)
+    dir_lights = count_by_class(actors, unreal.DirectionalLight)
+    sky_lights = count_by_class(actors, unreal.SkyLight)
+    ppv = count_by_class(actors, unreal.PostProcessVolume)
+    fogs = count_by_class(actors, unreal.ExponentialHeightFog)
+    sky_atm = count_by_class(actors, unreal.SkyAtmosphere)
+
     bomb_sites = count_by_name_fragment(actors, "bombsite")
     bombs = count_by_name_fragment(actors, "bombobjective")
     flags = count_by_name_fragment(actors, "flagobjective")
@@ -33,5 +43,7 @@ for map_path in MAPS:
     unreal.log(
         f"[MapVerify] {map_path}: actors={len(actors)} player_starts={player_starts} "
         f"static_meshes={static_meshes} text_callouts={text_actors} "
+        f"lights(point={point_lights},spot={spot_lights},dir={dir_lights},sky={sky_lights}) "
+        f"atmos(ppv={ppv},fog={fogs},sky_atm={sky_atm}) "
         f"bomb={bombs} bomb_sites={bomb_sites} flags={flags} capture_zones={capture_zones}"
     )

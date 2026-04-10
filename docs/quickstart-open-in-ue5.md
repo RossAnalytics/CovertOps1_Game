@@ -40,7 +40,20 @@ Each generated map already includes:
    - CTF flags can be picked/captured
    - SnD bomb actor and bomb sites are present
 
-## 6) Regenerate maps from script (optional)
+## 6) Enable the best visual quality in editor
+For the new 2026-style visual pass (Neon + Industrial) use:
+1. **Settings -> Engine Scalability Settings**: set `Epic` (or `Cinematic` for screenshots).
+2. **Project Settings -> Rendering**:
+   - Lumen Global Illumination: `Enabled`
+   - Lumen Reflections: `Enabled`
+   - Anti-Aliasing Method: `TSR`
+3. In viewport, set **View Mode** to `Lit` and enable **Realtime**.
+4. Open these maps:
+   - `/Game/Multiplayer/Maps/Lvl_MP_NeonDistrict`
+   - `/Game/Multiplayer/Maps/Lvl_MP_IndustrialComplex`
+5. Both maps include authored post-process, fog, atmosphere, and gameplay-safe colored lighting.
+
+## 7) Regenerate maps from script (optional)
 If you want to rebuild both maps from scratch:
 
 ```powershell
